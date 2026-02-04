@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <title>IMAZIGHN • متجر الكابوش الأمازيغي</title>
+
+  <!-- SEO -->
+  <meta name="description" content="متجر IMAZIGHN لبيع الكابوش الأمازيغي بطباعة عند الطلب. شحن سريع لجميع مدن المغرب (التوصيل مجاني). اطلب عبر واتساب بسهولة." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="IMAZIGHN • متجر الكابوش الأمازيغي" />
+  <meta property="og:description" content="كابوش أمازيغي بطباعة عند الطلب. مدن: قلعة مگونة، تنغير، زاكورة، أڭادير... اطلب عبر واتساب." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_MA" />
+
+  <!-- Fonts (اختياري) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- يمكنك تغيير الخط لاحقاً من CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicons (placeholder) -->
+  <link rel="icon" href="./assets/favicon.png" />
+</head>
+
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">تخطّي إلى المحتوى</a>
+
+  <!-- Top Announcement -->
+  <div class="topbar" role="region" aria-label="إعلان علوي">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="badge-az">
+          <span class="dot dot--blue"></span>
+          <span class="dot dot--green"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--red"></span>
+          <span>شحن مجاني لجميع مدن المغرب</span>
+        </span>
+        <span class="topbar__note">طباعة عند الطلب • تجهيز سريع • جودة ممتازة</span>
+      </div>
+      <div class="topbar__right">
+        <button class="linklike" type="button" data-action="openSupport">الدعم</button>
+        <span class="sep">•</span>
+        <button class="linklike" type="button" data-action="openTrackInfo">معلومات الشحن</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <div class="brand">
+        <button class="icon-btn burger" type="button" aria-label="فتح القائمة" data-action="toggleMenu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a class="brand__logo" href="#home" aria-label="العودة للرئيسية">
+          <span class="brand__mark" aria-hidden="true">ⵣ</span>
+          <span class="brand__name">
+            <strong>IMAZIGHN</strong>
+            <small>Hoodies • Print on Demand</small>
+          </span>
+        </a>
+      </div>
+
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#home" class="nav__link">الرئيسية</a>
+        <a href="#products" class="nav__link">المنتجات</a>
+        <a href="#about" class="nav__link">عن المتجر</a>
+        <a href="#support" class="nav__link">التواصل</a>
+        <a href="#faq" class="nav__link">الأسئلة</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" type="button" aria-label="بحث" data-action="openSearch">
+          <span class="icon" aria-hidden="true">🔎</span>
+        </button>
+        <button class="icon-btn" type="button" aria-label="سلة (تجريبية)" data-action="openCart">
+          <span class="icon" aria-hidden="true">🧺</span>
+          <span class="pill" data-bind="cartCount">0</span>
+        </button>
+        <button class="btn btn--az btn--small" type="button" data-action="openWhatsAppQuick">
+          طلب سريع واتساب
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu drawer -->
+    <div class="mobile-menu" data-ui="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__panel" role="dialog" aria-label="قائمة الهاتف" aria-modal="true">
+        <div class="mobile-menu__header">
+          <div class="brand__mini">
+            <span class="brand__mark">ⵣ</span>
+            <span class="brand__name"><strong>IMAZIGHN</strong></span>
+          </div>
+          <button class="icon-btn" type="button" aria-label="إغلاق" data-action="toggleMenu">✕</button>
+        </div>
+
+        <div class="mobile-menu__links">
+          <a href="#home" class="nav__link" data-action="toggleMenu">الرئيسية</a>
+          <a href="#products" class="nav__link" data-action="toggleMenu">المنتجات</a>
+          <a href="#about" class="nav__link" data-action="toggleMenu">عن المتجر</a>
+          <a href="#support" class="nav__link" data-action="toggleMenu">التواصل</a>
+          <a href="#faq" class="nav__link" data-action="toggleMenu">الأسئلة</a>
+        </div>
+
+        <div class="mobile-menu__cta">
+          <button class="btn btn--az" type="button" data-action="openWhatsAppQuick">اطلب الآن عبر واتساب</button>
+          <p class="muted">
+            التوصيل مجاني داخل المغرب • تجهيز سريع • الدفع عند الاتفاق عبر واتساب
+          </p>
+        </div>
+      </div>
+      <button class="mobile-menu__backdrop" type="button" aria-label="إغلاق القائمة" data-action="toggleMenu"></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="واجهة المتجر">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="kicker">
+            <span class="kicker__flag" aria-hidden="true"></span>
+            كابوش أمازيغي • طباعة عند الطلب
+          </p>
+
+          <h1 class="hero__title">
+            <span class="title-az">IMAZIGHN</span>
+            <span class="title-sub">هوية أمازيغية — ستايل عصري — جودة قوية</span>
+          </h1>
+
+          <p class="hero__desc">
+            اختر <strong>المدينة</strong> + <strong>ستايل الشعار</strong> (ألوان أمازيغية / أبيض / أسود) + <strong>لون الكابوش</strong> (أسود أو أبيض) + <strong>المقاس</strong>.
+            ثم اضغط “شراء” وسيُفتح واتساب تلقائياً برسالة جاهزة فيها كل الاختيارات.
+          </p>
+
+          <div class="hero__badges" role="list" aria-label="مميزات">
+            <div class="chip" role="listitem">التوصيل مجاني داخل المغرب</div>
+            <div class="chip" role="listitem">تجهيز سريع (عادة خلال 1–3 أيام)</div>
+            <div class="chip" role="listitem">طباعة احترافية وثابتة</div>
+            <div class="chip" role="listitem">دعم مباشر عبر واتساب</div>
+          </div>
+
+          <div class="hero__cta">
+            <a class="btn btn--az" href="#products">تصفّح المنتجات</a>
+            <button class="btn btn--ghost" type="button" data-action="openBestSeller">
+              عرض الأكثر طلباً
+            </button>
+          </div>
+
+          <div class="trustbar" aria-label="ضمانات المتجر">
+            <div class="trust">
+              <span class="trust__icon" aria-hidden="true">✅</span>
+              <span class="trust__text">صور واقعية للطباعة</span>
+            </div>
+            <div class="trust">
+              <span class="trust__icon" aria-hidden="true">🧵</span>
+              <span class="trust__text">قماش مريح وعملي</span>
+            </div>
+            <div class="trust">
+              <span class="trust__icon" aria-hidden="true">📦</span>
+              <span class="trust__text">تغليف آمن</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero__visual" aria-label="صورة المنتج">
+          <div class="visual-card">
+            <!-- NOTE: src سيتم تعميره من JavaScript -->
+            <img
+              class="visual-card__img"
+              alt="كابوش أمازيغي — صورة عرض"
+              data-bind="heroImage"
+              src=""
+            />
+            <div class="visual-card__overlay">
+              <div class="price-tag">
+                <span class="price-tag__label">ابتداءً من</span>
+                <span class="price-tag__value" data-bind="basePrice">—</span>
+                <span class="price-tag__hint">يشمل التوصيل</span>
+              </div>
+
+              <div class="mini-actions">
+                <button class="btn btn--small btn--az" type="button" data-action="openWhatsAppQuick">
+                  اطلب الآن
+                </button>
+                <a class="btn btn--small btn--ghost" href="#sizeGuide">
+                  دليل المقاسات
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="az-pattern" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION FILTERS -->
+    <section class="section section--tight" aria-label="فلترة سريعة">
+      <div class="container">
+        <div class="panel panel--soft">
+          <div class="panel__head">
+            <h2 class="panel__title">اختر بسرعة</h2>
+            <p class="panel__sub">فلتر المدينة + ستايل الشعار + لون الكابوش</p>
+          </div>
+
+          <form class="filters" id="quickFilters">
+            <div class="field">
+              <label for="filterCity">المدينة</label>
+              <select id="filterCity" name="city" data-bind="filterCity">
+                <option value="all">كل المدن</option>
+                <option value="kalaat_mgouna">قلعة مگونة</option>
+                <option value="tinghir">تنغير</option>
+                <option value="zagora">زاكورة</option>
+                <option value="agadir">أڭادير</option>
+                <option value="no_city">بدون مدينة</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filterLogoStyle">ستايل الشعار</label>
+              <select id="filterLogoStyle" name="logoStyle" data-bind="filterLogoStyle">
+                <option value="all">الكل</option>
+                <option value="amazigh_colors">ألوان أمازيغية</option>
+                <option value="white">أبيض</option>
+                <option value="black">أسود</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filterHoodieColor">لون الكابوش</label>
+              <select id="filterHoodieColor" name="hoodieColor" data-bind="filterHoodieColor">
+                <option value="all">الكل</option>
+                <option value="black">أسود</option>
+                <option value="white">أبيض</option>
+              </select>
+            </div>
+
+            <div class="field field--btn">
+              <button class="btn btn--az" type="button" data-action="applyFilters">تطبيق</button>
+              <button class="btn btn--ghost" type="button" data-action="resetFilters">إعادة</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section" aria-label="المنتجات">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">المنتجات</h2>
+          <p class="section__desc">
+            كل منتج عندو 4 صور: صورة رئيسية + 3 ستايلات للشعار.
+            منين كتفتح المنتج تقدر تختار المدينة، ستايل الشعار، لون الكابوش، والمقاس — ثم “شراء عبر واتساب”.
+          </p>
+        </div>
+
+        <!-- Products grid (Cards are placeholders; JS سيعمر الصور والعناوين والثمن والوصف) -->
+        <div class="grid" id="productsGrid" data-ui="productsGrid">
+          <!-- Product Card Template 1 -->
+          <article class="card" data-product-id="p1" tabindex="0" role="button" aria-label="فتح المنتج">
+            <div class="card__media">
+              <img class="card__img" src="" alt="منتج" data-bind="productCardImage" data-product-image="p1_main">
+              <span class="card__tag">الأكثر طلباً</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-bind="productTitle" data-product-title="p1">—</h3>
+              <p class="card__desc" data-bind="productShortDesc" data-product-short="p1">—</p>
+              <div class="card__meta">
+                <span class="price" data-bind="productPrice" data-product-price="p1">—</span>
+                <span class="ship">توصيل مجاني</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--az btn--small" type="button" data-action="openProduct" data-product="p1">عرض</button>
+                <button class="btn btn--ghost btn--small" type="button" data-action="quickWhatsApp" data-product="p1">طلب سريع</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card Template 2 -->
+          <article class="card" data-product-id="p2" tabindex="0" role="button" aria-label="فتح المنتج">
+            <div class="card__media">
+              <img class="card__img" src="" alt="منتج" data-bind="productCardImage" data-product-image="p2_main">
+              <span class="card__tag card__tag--new">جديد</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-bind="productTitle" data-product-title="p2">—</h3>
+              <p class="card__desc" data-bind="productShortDesc" data-product-short="p2">—</p>
+              <div class="card__meta">
+                <span class="price" data-bind="productPrice" data-product-price="p2">—</span>
+                <span class="ship">توصيل مجاني</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--az btn--small" type="button" data-action="openProduct" data-product="p2">عرض</button>
+                <button class="btn btn--ghost btn--small" type="button" data-action="quickWhatsApp" data-product="p2">طلب سريع</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card Template 3 -->
+          <article class="card" data-product-id="p3" tabindex="0" role="button" aria-label="فتح المنتج">
+            <div class="card__media">
+              <img class="card__img" src="" alt="منتج" data-bind="productCardImage" data-product-image="p3_main">
+              <span class="card__tag">مدينة</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-bind="productTitle" data-product-title="p3">—</h3>
+              <p class="card__desc" data-bind="productShortDesc" data-product-short="p3">—</p>
+              <div class="card__meta">
+                <span class="price" data-bind="productPrice" data-product-price="p3">—</span>
+                <span class="ship">توصيل مجاني</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--az btn--small" type="button" data-action="openProduct" data-product="p3">عرض</button>
+                <button class="btn btn--ghost btn--small" type="button" data-action="quickWhatsApp" data-product="p3">طلب سريع</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card Template 4 -->
+          <article class="card" data-product-id="p4" tabindex="0" role="button" aria-label="فتح المنتج">
+            <div class="card__media">
+              <img class="card__img" src="" alt="منتج" data-bind="productCardImage" data-product-image="p4_main">
+              <span class="card__tag">بدون مدينة</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-bind="productTitle" data-product-title="p4">—</h3>
+              <p class="card__desc" data-bind="productShortDesc" data-product-short="p4">—</p>
+              <div class="card__meta">
+                <span class="price" data-bind="productPrice" data-product-price="p4">—</span>
+                <span class="ship">توصيل مجاني</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--az btn--small" type="button" data-action="openProduct" data-product="p4">عرض</button>
+                <button class="btn btn--ghost btn--small" type="button" data-action="quickWhatsApp" data-product="p4">طلب سريع</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__foot">
+          <div class="note-box">
+            <div class="note-box__icon" aria-hidden="true">ℹ️</div>
+            <div class="note-box__content">
+              <strong>مهم:</strong>
+              التوصيل مجاني داخل المغرب. كنأكد عليك الطلب كيتدار عبر واتساب باش نأكد المقاس والمدينة واللون والتفاصيل قبل الإرسال.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIZE GUIDE -->
+    <section id="sizeGuide" class="section section--alt" aria-label="دليل المقاسات">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">دليل المقاسات</h2>
+          <p class="section__desc">
+            اختر المقاس المناسب. إذا كنت محتار، راسلنا في واتساب وسنساعدك.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="size-grid">
+            <div class="size-card">
+              <h3>S</h3>
+              <p>مناسب للأجسام النحيفة أو ستايل قريب للجسم.</p>
+            </div>
+            <div class="size-card">
+              <h3>M</h3>
+              <p>مقاس متوسط ومريح للاستخدام اليومي.</p>
+            </div>
+            <div class="size-card">
+              <h3>L</h3>
+              <p>مقاس واسع قليلاً، مناسب لستايل مريح.</p>
+            </div>
+            <div class="size-card">
+              <h3>XL</h3>
+              <p>واسع ومريح، مناسب للي بغا Oversize.</p>
+            </div>
+            <div class="size-card">
+              <h3>XXL</h3>
+              <p>أكبر مقاس، راحة قصوى.</p>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--az" type="button" data-action="openWhatsAppQuick">سولنا على المقاس في واتساب</button>
+            <span class="muted">نقدر نقترحو عليك المقاس حسب الطول والوزن.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-label="عن المتجر">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">عن IMAZIGHN</h2>
+          <p class="section__desc">
+            متجر متخصص في كابوشات أمازيغية بطباعة عند الطلب. هدفنا نوصلو “الهوية” فستايل عصري وبجودة طباعة كتعيش.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3 class="panel__title">شنو كنقدمو؟</h3>
+            <ul class="list">
+              <li>شعارات أمازيغية بثلاث ستايلات: <strong>ألوان أمازيغية / أبيض / أسود</strong></li>
+              <li>مدن متوفرة: <strong>قلعة مگونة</strong>، <strong>تنغير</strong>، <strong>زاكورة</strong>، <strong>أڭادير</strong> + خيار <strong>بدون مدينة</strong></li>
+              <li>لون الكابوش: <strong>أسود أو أبيض</strong> فقط</li>
+              <li>مقاسات متعددة: S / M / L / XL / XXL</li>
+              <li>شحن مجاني لجميع مدن المغرب</li>
+            </ul>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3 class="panel__title">كيفاش كنديرو الطلب؟</h3>
+            <ol class="steps">
+              <li>اختار المنتج اللي عجبك</li>
+              <li>حدد المدينة + ستايل الشعار + لون الكابوش + المقاس</li>
+              <li>ضغط على “شراء عبر واتساب”</li>
+              <li>غادي يتحلّ واتساب برسالة جاهزة فيها كل اختياراتك</li>
+              <li>كنكمّلو التفاصيل (الاسم/العنوان) ثم الإرسال</li>
+            </ol>
+
+            <div class="callout">
+              <strong>سياسة التسويق:</strong> التوصيل مجاني — الثمن كيكون شامل كلشي باش الزبون يبقى مرتاح وواضح.
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-story">
+          <div class="brand-story__card">
+            <h3>رمز ⵣ</h3>
+            <p>ⵣ كيرمز للحرية والهوية الأمازيغية. حنا كنقدمو هاد الرمز فتصميم حديث يناسب اللباس اليومي.</p>
+          </div>
+          <div class="brand-story__card">
+            <h3>جودة الطباعة</h3>
+            <p>طباعة واضحة وألوان قوية، كتخدم مزيان فالصور ديال إنستغرام وفالواقع.</p>
+          </div>
+          <div class="brand-story__card">
+            <h3>خدمة مباشرة</h3>
+            <p>الدعم عبر واتساب باش يكون كلشي سريع: اختيار، تأكيد، إرسال.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT / CONTACT -->
+    <section id="support" class="section section--alt" aria-label="الدعم والتواصل">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">التواصل والدعم</h2>
+          <p class="section__desc">
+            تواصل معنا في أي وقت عبر واتساب. كنردو بسرعة ونعاونوك فاختيار المقاس والتصميم والمدينة.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3 class="panel__title">واتساب</h3>
+            <p class="muted">
+              اضغط الزر وسيتم فتح واتساب برسالة جاهزة.  
+              <br><strong>الرقم:</strong> <span data-bind="whatsappNumberText">—</span>
+            </p>
+
+            <div class="support-actions">
+              <button class="btn btn--az" type="button" data-action="openWhatsAppQuick">
+                فتح واتساب الآن
+              </button>
+              <button class="btn btn--ghost" type="button" data-action="copyWhatsApp">
+                نسخ الرقم
+              </button>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 class="panel__title">وقت العمل</h3>
+            <p class="muted">
+              عادة كنردو نفس النهار.  
+              تجهيز الطلب غالباً خلال 1–3 أيام (حسب الضغط والطباعة).
+            </p>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3 class="panel__title">الشحن</h3>
+            <ul class="list">
+              <li><strong>التوصيل:</strong> مجاني لجميع المدن المغربية</li>
+              <li><strong>المدة:</strong> غالباً أقل من 3 أيام داخل المغرب (قد تختلف حسب المدينة)</li>
+              <li><strong>التغليف:</strong> آمن ومحمي</li>
+              <li><strong>التأكيد:</strong> قبل الإرسال كنأكد المقاس واللون والمدينة في واتساب</li>
+            </ul>
+
+            <div class="callout">
+              <strong>ملاحظة:</strong> تقدر تطلب “بدون مدينة” إذا بغيتي الشعار فقط.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-label="الأسئلة الشائعة">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">الأسئلة الشائعة</h2>
+          <p class="section__desc">أجوبة سريعة على أكثر الأسئلة تكراراً.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>كيفاش كنطلب؟</summary>
+            <p>كتفتح المنتج، كتختار المدينة والستايل ولون الكابوش والمقاس، ومن بعد كتضغط “شراء عبر واتساب”. غادي تتحل رسالة جاهزة كتسيفطها لينا.</p>
+          </details>
+          <details class="faq__item">
+            <summary>واش التوصيل مجاني؟</summary>
+            <p>نعم، التوصيل مجاني لجميع مدن المغرب. الثمن اللي كتشوف كيكون شامل.</p>
+          </details>
+          <details class="faq__item">
+            <summary>شنو هي ألوان الكابوش المتوفرة؟</summary>
+            <p>حالياً متوفر غير الأسود والأبيض.</p>
+          </details>
+          <details class="faq__item">
+            <summary>واش كاين نفس الشعار بثلاث ستايلات؟</summary>
+            <p>نعم: (ألوان أمازيغية) + (أبيض) + (أسود) حسب المدينة أو بدون مدينة.</p>
+          </details>
+          <details class="faq__item">
+            <summary>واش نقدر نبدّل المدينة؟</summary>
+            <p>طبعاً، كاين مدن محددة فالمتجر، وإذا بغيتي مدينة أخرى سيفط لينا واتساب ونشوفو الإمكانية.</p>
+          </details>
+          <details class="faq__item">
+            <summary>كيفاش نختار المقاس؟</summary>
+            <p>شوف دليل المقاسات، وإذا كنت متردد راسلنا فواتساب بالطول والوزن ونعطيوك المقاس الأنسب.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">ⵣ</span>
+          <div class="brand__name">
+            <strong>IMAZIGHN</strong>
+            <small>متجر الكابوش الأمازيغي • طباعة عند الطلب</small>
+          </div>
+        </div>
+        <p class="muted">
+          شحن مجاني لجميع مدن المغرب • دعم واتساب • تصميم أمازيغي عصري.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h3>روابط</h3>
+        <a href="#products">المنتجات</a>
+        <a href="#about">عن المتجر</a>
+        <a href="#support">التواصل</a>
+        <a href="#faq">الأسئلة</a>
+      </div>
+
+      <div class="footer__col">
+        <h3>معلومات</h3>
+        <button class="linklike" type="button" data-action="openTrackInfo">الشحن والتوصيل</button>
+        <button class="linklike" type="button" data-action="openReturnPolicy">سياسة الاستبدال</button>
+        <button class="linklike" type="button" data-action="openPrivacy">الخصوصية</button>
+      </div>
+
+      <div class="footer__col">
+        <h3>واتساب</h3>
+        <p class="muted">
+          رقم المتجر: <strong data-bind="whatsappNumberTextFooter">—</strong>
+        </p>
+        <button class="btn btn--az btn--small" type="button" data-action="openWhatsAppQuick">فتح واتساب</button>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span data-bind="year">—</span> IMAZIGHN. جميع الحقوق محفوظة.</span>
+      <span class="az-dots" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+      </span>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" data-ui="productModal" aria-hidden="true">
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="تفاصيل المنتج">
+      <div class="modal__header">
+        <div class="modal__title">
+          <strong data-bind="modalTitle">—</strong>
+          <small data-bind="modalSubtitle">—</small>
+        </div>
+        <button class="icon-btn" type="button" aria-label="إغلاق" data-action="closeProduct">✕</button>
+      </div>
+
+      <div class="modal__body">
+        <div class="product">
+          <!-- Gallery -->
+          <div class="gallery" aria-label="صور المنتج">
+            <div class="gallery__main">
+              <img src="" alt="صورة المنتج" data-bind="modalMainImage">
+            </div>
+
+            <div class="gallery__thumbs" role="list" aria-label="صور إضافية">
+              <!-- هذه thumbnails ستتعمّر من JS (روابط الصور) -->
+              <button class="thumb" type="button" role="listitem" data-action="selectThumb" data-thumb="0">
+                <img src="" alt="صورة 1" data-bind="thumb0">
+              </button>
+              <button class="thumb" type="button" role="listitem" data-action="selectThumb" data-thumb="1">
+                <img src="" alt="صورة 2" data-bind="thumb1">
+              </button>
+              <button class="thumb" type="button" role="listitem" data-action="selectThumb" data-thumb="2">
+                <img src="" alt="صورة 3" data-bind="thumb2">
+              </button>
+              <button class="thumb" type="button" role="listitem" data-action="selectThumb" data-thumb="3">
+                <img src="" alt="صورة 4" data-bind="thumb3">
+              </button>
+            </div>
+
+            <div class="mini-info">
+              <div class="mini-info__item">
+                <span class="mini-info__icon" aria-hidden="true">🚚</span>
+                <span>توصيل مجاني داخل المغرب</span>
+              </div>
+              <div class="mini-info__item">
+                <span class="mini-info__icon" aria-hidden="true">🖨️</span>
+                <span>طباعة عند الطلب</span>
+              </div>
+              <div class="mini-info__item">
+                <span class="mini-info__icon" aria-hidden="true">🧷</span>
+                <span>جودة ممتازة</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Config -->
+          <div class="config" aria-label="اختيارات المنتج">
+            <div class="config__price">
+              <span class="price" data-bind="modalPrice">—</span>
+              <span class="muted">يشمل التوصيل</span>
+            </div>
+
+            <p class="config__desc" data-bind="modalDesc">
+              —
+            </p>
+
+            <form id="productForm" class="form">
+              <div class="form__row">
+                <div class="field">
+                  <label for="citySelect">المدينة</label>
+                  <select id="citySelect" name="city" required>
+                    <option value="kalaat_mgouna">قلعة مگونة</option>
+                    <option value="tinghir">تنغير</option>
+                    <option value="zagora">زاكورة</option>
+                    <option value="agadir">أڭادير</option>
+                    <option value="no_city">بدون مدينة</option>
+                  </select>
+                  <small class="hint">إذا اخترت “بدون مدينة” غادي يكون الشعار فقط.</small>
+                </div>
+
+                <div class="field">
+                  <label for="logoStyleSelect">ستايل الشعار</label>
+                  <select id="logoStyleSelect" name="logoStyle" required>
+                    <option value="amazigh_colors">ألوان أمازيغية</option>
+                    <option value="white">أبيض</option>
+                    <option value="black">أسود</option>
+                  </select>
+                  <small class="hint">نفس الشعار بثلاث ستايلات.</small>
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="hoodieColorSelect">لون الكابوش</label>
+                  <select id="hoodieColorSelect" name="hoodieColor" required>
+                    <option value="black">أسود</option>
+                    <option value="white">أبيض</option>
+                  </select>
+                  <small class="hint">الألوان المتوفرة للكابوش: أبيض/أسود فقط.</small>
+                </div>
+
+                <div class="field">
+                  <label for="sizeSelect">المقاس</label>
+                  <select id="sizeSelect" name="size" required>
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
+                  <small class="hint">شوف <a href="#sizeGuide" data-action="jumpSizeGuide">دليل المقاسات</a> إذا محتار.</small>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="noteInput">ملاحظة (اختياري)</label>
+                <input id="noteInput" name="note" type="text" placeholder="مثال: بغيت Oversize / عندي ملاحظة على العنوان..." />
+              </div>
+
+              <div class="config__actions">
+                <button class="btn btn--az" type="button" data-action="buyWhatsApp">
+                  شراء عبر واتساب
+                </button>
+                <button class="btn btn--ghost" type="button" data-action="addToCart">
+                  إضافة للسلة (تجريبي)
+                </button>
+              </div>
+
+              <div class="secure-note">
+                <span aria-hidden="true">🔒</span>
+                <span>الطلب يتم عبر واتساب للتأكيد وتفادي أي خطأ في المقاس أو اللون.</span>
+              </div>
+            </form>
+
+            <div class="divider"></div>
+
+            <div class="policy-mini">
+              <strong>سياسة الاستبدال:</strong>
+              <p class="muted">إذا وقع خطأ من جهتنا فالمقاس/اللون، كنصلحو الوضع بسرعة. التفاصيل فالأسفل.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button class="btn btn--ghost" type="button" data-action="closeProduct">إغلاق</button>
+        <button class="btn btn--az" type="button" data-action="buyWhatsApp">شراء عبر واتساب</button>
+      </div>
+    </div>
+
+    <button class="modal__backdrop" type="button" aria-label="إغلاق" data-action="closeProduct"></button>
+  </div>
+
+  <!-- INFO MODAL (Shipping / Privacy / Return) -->
+  <div class="modal" data-ui="infoModal" aria-hidden="true">
+    <div class="modal__panel modal__panel--narrow" role="dialog" aria-modal="true" aria-label="معلومات">
+      <div class="modal__header">
+        <div class="modal__title">
+          <strong data-bind="infoTitle">—</strong>
+          <small data-bind="infoSubtitle">—</small>
+        </div>
+        <button class="icon-btn" type="button" aria-label="إغلاق" data-action="closeInfo">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="content" data-bind="infoContent">
+          <!-- JS يعبّي المحتوى -->
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--az" type="button" data-action="closeInfo">حسناً</button>
+      </div>
+    </div>
+    <button class="modal__backdrop" type="button" aria-label="إغلاق" data-action="closeInfo"></button>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal" data-ui="searchModal" aria-hidden="true">
+    <div class="modal__panel modal__panel--narrow" role="dialog" aria-modal="true" aria-label="بحث">
+      <div class="modal__header">
+        <div class="modal__title">
+          <strong>بحث في المنتجات</strong>
+          <small>اكتب المدينة أو “بدون مدينة” أو نوع الشعار</small>
+        </div>
+        <button class="icon-btn" type="button" aria-label="إغلاق" data-action="closeSearch">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="field">
+          <label for="searchInput">بحث</label>
+          <input id="searchInput" type="search" placeholder="مثال: تنغير / أبيض / أڭادير / بدون مدينة..." data-bind="searchInput" />
+          <small class="hint">النتائج ستتحدث تلقائياً.</small>
+        </div>
+
+        <div class="search-results" data-ui="searchResults">
+          <p class="muted">ابدأ بالكتابة لعرض النتائج…</p>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--ghost" type="button" data-action="closeSearch">إغلاق</button>
+      </div>
+    </div>
+    <button class="modal__backdrop" type="button" aria-label="إغلاق" data-action="closeSearch"></button>
+  </div>
+
+  <!-- CART MODAL (simple placeholder) -->
+  <div class="modal" data-ui="cartModal" aria-hidden="true">
+    <div class="modal__panel modal__panel--narrow" role="dialog" aria-modal="true" aria-label="السلة">
+      <div class="modal__header">
+        <div class="modal__title">
+          <strong>سلة الطلب (تجريبية)</strong>
+          <small>الشراء النهائي يتم عبر واتساب</small>
+        </div>
+        <button class="icon-btn" type="button" aria-label="إغلاق" data-action="closeCart">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="cart" data-ui="cartItems">
+          <p class="muted">السلة فارغة حالياً.</p>
+        </div>
+        <div class="divider"></div>
+        <button class="btn btn--az" type="button" data-action="checkoutCartWhatsApp">
+          إرسال السلة إلى واتساب
+        </button>
+        <p class="muted small">
+          ملاحظة: هذا فقط لتجميع اختياراتك، ولكن التأكيد النهائي يكون في واتساب.
+        </p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--ghost" type="button" data-action="closeCart">إغلاق</button>
+      </div>
+    </div>
+    <button class="modal__backdrop" type="button" aria-label="إغلاق" data-action="closeCart"></button>
+  </div>
+
+  <!-- JS -->
+  <script src="./app.js" defer></script>
+</body>
+</html>
