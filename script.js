@@ -47,9 +47,9 @@ const PRODUCTS = [
     price: 299,
     logoVariant: "amazigh",
     images: [
-      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+1",
-      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+2",
-      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+3",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_colors_tinghir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_black_tinghir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_white_tinghir.png",
       "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+4"
     ]
   },
@@ -60,9 +60,9 @@ const PRODUCTS = [
     price: 299,
     logoVariant: "white",
     images: [
-      "https://via.placeholder.com/600x450?text=Tinghir+White+1",
-      "https://via.placeholder.com/600x450?text=Tinghir+White+2",
-      "https://via.placeholder.com/600x450?text=Tinghir+White+3",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_white_tinghir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_black_tinghir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_tinghir/imazighn_colors_tinghir.png",
       "https://via.placeholder.com/600x450?text=Tinghir+White+4"
     ]
   },
@@ -73,9 +73,9 @@ const PRODUCTS = [
     price: 319,
     logoVariant: "amazigh",
     images: [
-      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+1",
-      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+2",
-      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+3",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_zagora/imazighn_colors_zagora.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_zagora/imazighn_black_zagora.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_zagora/imazighn_white_zagora.png",
       "https://via.placeholder.com/600x450?text=Zagora+Amazigh+4"
     ]
   },
@@ -86,9 +86,9 @@ const PRODUCTS = [
     price: 329,
     logoVariant: "black",
     images: [
-      "https://via.placeholder.com/600x450?text=Agadir+Black+1",
-      "https://via.placeholder.com/600x450?text=Agadir+Black+2",
-      "https://via.placeholder.com/600x450?text=Agadir+Black+3",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_black_agadir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_colors_agadir.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_white_agadir.png",
       "https://via.placeholder.com/600x450?text=Agadir+Black+4"
     ]
   },
@@ -99,13 +99,14 @@ const PRODUCTS = [
     price: 279,
     logoVariant: "amazigh",
     images: [
-      "images /imazighn/imazighn_white.png",
-      "images /imazighn/imazighn_black.png",
-      "images /imazighn/imazighn_colors.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_colors.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_black.png",
+      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_white.png",
       "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+4"
     ]
   }
 ];
+
 
 /* ------------------------------
    DOM ELEMENTS
