@@ -1,838 +1,285 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
 
-  <title>Imazighn Hoodies — متجر كابوش أمازيغي | توصيل مجاني داخل المغرب</title>
+  <title>IMAZIGHN™ | متجر كابوش أمازيغي فاخر</title>
 
-  <!-- SEO -->
-  <meta name="description" content="متجر IMAZIGHN — كابوش أمازيغي (ⵣ) بطباعة عند الطلب. اختر المدينة (قلعة مݣونة، تنغير، زاكورة، أكادير…) واختر نوع الشعار (ألوان أمازيغية / أبيض / أسود) والمقاس واللون. التوصيل مجاني لجميع المدن المغربية." />
-  <meta name="keywords" content="Amazigh, Imazighn, ⵣ, كابوش, هودي, طباعة عند الطلب, المغرب, تنغير, زاكورة, أكادير, قلعة مݣونة" />
+  <meta name="description" content="IMAZIGHN™ متجر كابوشات أمازيغية بطباعة عند الطلب. اختر المدينة، الشعار، المقاس واللون. توصيل مجاني لجميع المدن المغربية.">
+  <meta name="keywords" content="IMAZIGHN, Amazigh, ⵣ, Hoodie, كابوش, متجر أمازيغي, المغرب">
 
-  <!-- Open Graph (سيتعدل لاحقاً عبر JS إذا بغيت) -->
-  <meta property="og:title" content="Imazighn Hoodies — متجر كابوش أمازيغي" />
-  <meta property="og:description" content="اختَر المدينة + نوع الشعار + المقاس + اللون… والطلب كيتم عبر واتساب برسالة جاهزة." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="" />
-  <meta property="og:locale" content="ar_MA" />
-
-  <!-- Fonts placeholders (CSS سيهتم بها لاحقاً) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Your CSS (سنضيفه في الخطوة القادمة) -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=1.0.0">
 </head>
 
 <body>
-  <!-- ====== Skip link for accessibility ====== -->
-  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
 
-  <!-- ====== Top Notice Bar ====== -->
-  <div class="topbar" role="banner" aria-label="شريط معلومات">
-    <div class="topbar__inner">
-      <div class="topbar__left">
-        <span class="badge badge--amazigh" aria-hidden="true">ⵣ</span>
-        <span class="topbar__text">
-          توصيل مجاني لجميع المدن المغربية • طباعة عند الطلب • جودة Premium
-        </span>
-      </div>
-      <div class="topbar__right">
-        <button class="topbar__btn" type="button" id="openSizeGuideBtn" aria-haspopup="dialog">
-          دليل المقاسات
-        </button>
-        <button class="topbar__btn" type="button" id="openSupportBtn" aria-controls="contact">
-          الدعم
-        </button>
-      </div>
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__icon">ⵣ</span>
+      <span>توصيل مجاني • طباعة عند الطلب • جودة عالية</span>
+    </div>
+    <div class="topbar__right">
+      <a href="#shipping">الشحن</a>
+      <a href="#faq">الأسئلة</a>
+      <a href="#contact">الدعم</a>
     </div>
   </div>
-
-  <!-- ====== Header / Navigation ====== -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a class="brand" href="#home" aria-label="الانتقال إلى الرئيسية">
-        <span class="brand__mark" aria-hidden="true">ⵣ</span>
-        <span class="brand__name">IMAZIGHN</span>
-        <span class="brand__tag">Hoodies</span>
-      </a>
-
-      <nav class="nav" aria-label="القائمة الرئيسية">
-        <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-          <span class="nav__toggleLines" aria-hidden="true"></span>
-          <span class="sr-only">فتح/إغلاق القائمة</span>
-        </button>
-
-        <div class="nav__menu" id="navMenu">
-          <a class="nav__link" href="#home">الرئيسية</a>
-          <a class="nav__link" href="#shop">المنتجات</a>
-          <a class="nav__link" href="#about">عن المتجر</a>
-          <a class="nav__link" href="#shipping">الشحن</a>
-          <a class="nav__link" href="#faq">الأسئلة</a>
-          <a class="nav__link nav__link--cta" href="#contact">اطلب عبر واتساب</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ====== Main ====== -->
-  <main id="main">
-
-    <!-- ====== Hero Section ====== -->
-    <section class="hero" id="home" aria-label="قسم الترحيب">
-      <div class="container hero__inner">
-
-        <div class="hero__content">
-          <p class="hero__kicker">
-            <span class="kicker__dot" aria-hidden="true"></span>
-            طباعة عند الطلب — تصميم أمازيغي أصلي
-          </p>
-
-          <h1 class="hero__title">
-            كابوش <span class="amazigh-gradient">IMAZIGHN</span>  
-            <br />
-            اختر المدينة • اختر الشعار • واطلب مباشرة عبر واتساب
-          </h1>
-
-          <p class="hero__subtitle">
-            نفس الشعار بثلاث نسخ: <strong>ألوان أمازيغية</strong> / <strong>أبيض</strong> / <strong>أسود</strong>.  
-            لون الكابوش متوفر: <strong>أسود أو أبيض</strong>.  
-            مقاسات: <strong>XS إلى XXL</strong> (يمكن تعديلها لاحقاً).
-          </p>
-
-          <div class="hero__trust">
-            <div class="trust__item">
-              <span class="trust__icon" aria-hidden="true">✓</span>
-              <span>جودة قماش ممتازة</span>
-            </div>
-            <div class="trust__item">
-              <span class="trust__icon" aria-hidden="true">✓</span>
-              <span>توصيل مجاني داخل المغرب</span>
-            </div>
-            <div class="trust__item">
-              <span class="trust__icon" aria-hidden="true">✓</span>
-              <span>شحن سريع (1–3 أيام)</span>
-            </div>
-          </div>
-
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#shop">شاهد المنتجات</a>
-            <button class="btn btn--ghost" type="button" id="quickOrderBtn">
-              طلب سريع عبر واتساب
-            </button>
-          </div>
-
-          <p class="hero__note" id="storeNote">
-            * الدفع والتأكيد كيتدارو عبر واتساب بعد إرسال الطلب.  
-            * الأسعار والمنتجات قابلة للتعديل (غادي تكون كاملة من JavaScript).
-          </p>
-        </div>
-
-        <div class="hero__visual" aria-hidden="true">
-          <!-- الصورة الكبيرة ديال الهودي ستجي من JS لاحقاً (أو تقدر تديرها ف CSS كخلفية) -->
-          <div class="heroCard">
-            <div class="heroCard__badge">Best Seller</div>
-            <div class="heroCard__mock" id="heroMockImage">
-              <!-- JS will inject image -->
-            </div>
-            <div class="heroCard__meta">
-              <div class="heroCard__metaLeft">
-                <div class="heroCard__name">IMAZIGHN Hoodie</div>
-                <div class="heroCard__desc">ⵣ • Print-on-demand</div>
-              </div>
-              <div class="heroCard__metaRight">
-                <div class="heroCard__price" id="heroMockPrice">—</div>
-                <div class="heroCard__small">MAD</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="hero__pattern" aria-hidden="true"></div>
-    </section>
-
-    <!-- ====== Shop Section ====== -->
-    <section class="shop" id="shop" aria-label="قسم المنتجات">
-      <div class="container">
-
-        <header class="sectionHeader">
-          <h2 class="sectionHeader__title">
-            منتجاتنا <span class="amazigh-gradient">الأمازيغية</span>
-          </h2>
-          <p class="sectionHeader__subtitle">
-            اختر المدينة (مثلاً: قلعة مݣونة / تنغير / زاكورة / أكادير…) ثم اختر نوع الشعار والمقاس ولون الكابوش.  
-            عند الضغط على “شراء”، يتم فتح واتساب برسالة جاهزة بكل التفاصيل.
-          </p>
-        </header>
-
-        <!-- Filters (UI فقط، المنطق في JS) -->
-        <div class="filters" aria-label="فلاتر البحث">
-          <div class="filters__row">
-            <div class="field">
-              <label class="field__label" for="filterCity">المدينة</label>
-              <select class="field__control" id="filterCity" name="filterCity">
-                <option value="all">كل المدن</option>
-                <!-- JS will populate -->
-              </select>
-            </div>
-
-            <div class="field">
-              <label class="field__label" for="filterLogoVariant">نوع الشعار</label>
-              <select class="field__control" id="filterLogoVariant" name="filterLogoVariant">
-                <option value="all">الكل</option>
-                <option value="amazigh_colors">ألوان أمازيغية</option>
-                <option value="white">أبيض</option>
-                <option value="black">أسود</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label class="field__label" for="filterHoodieColor">لون الكابوش</label>
-              <select class="field__control" id="filterHoodieColor" name="filterHoodieColor">
-                <option value="all">الكل</option>
-                <option value="hoodie_black">أسود</option>
-                <option value="hoodie_white">أبيض</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label class="field__label" for="filterSort">الترتيب</label>
-              <select class="field__control" id="filterSort" name="filterSort">
-                <option value="featured">المميزة</option>
-                <option value="price_low">السعر: من الأقل</option>
-                <option value="price_high">السعر: من الأعلى</option>
-                <option value="newest">الأحدث</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="filters__row filters__row--second">
-            <div class="search">
-              <label class="sr-only" for="searchInput">بحث</label>
-              <input class="search__input" id="searchInput" type="search" placeholder="ابحث مثلاً: Tinghir / Kalaat / Agadir / ⵣ …" />
-              <button class="search__btn" type="button" id="clearSearchBtn">مسح</button>
-            </div>
-
-            <div class="filters__hint">
-              <span class="badge">New</span>
-              <span>يمكنك تغيير كل شيء (صور/أسعار/مدن/وصف) من JavaScript لاحقاً.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Products Grid (JS will render cards here) -->
-        <div class="grid" id="productsGrid" aria-label="شبكة المنتجات">
-          <!-- JS will inject product cards -->
-          <div class="skeletonCard" aria-hidden="true"></div>
-          <div class="skeletonCard" aria-hidden="true"></div>
-          <div class="skeletonCard" aria-hidden="true"></div>
-          <div class="skeletonCard" aria-hidden="true"></div>
-        </div>
-
-        <!-- Shop footer callout -->
-        <div class="shopCallout">
-          <div class="shopCallout__icon" aria-hidden="true">ⵣ</div>
-          <div class="shopCallout__content">
-            <h3 class="shopCallout__title">طباعة عند الطلب — كل قطعة كتوجد خصيصاً ليك</h3>
-            <p class="shopCallout__text">
-              منين كتختار (المدينة + نوع الشعار + لون الكابوش + المقاس)، كنصاوبو الطلب ديالك وكنأكدو التفاصيل عبر واتساب.
-              التوصيل مجاني داخل المغرب.
-            </p>
-          </div>
-          <div class="shopCallout__actions">
-            <button class="btn btn--primary" type="button" id="openAllProductsBtn">عرض جميع المنتجات</button>
-            <a class="btn btn--ghost" href="#contact">تواصل معنا</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====== About Section ====== -->
-    <section class="about" id="about" aria-label="عن المتجر">
-      <div class="container about__inner">
-
-        <div class="about__content">
-          <header class="sectionHeader sectionHeader--left">
-            <h2 class="sectionHeader__title">
-              لماذا <span class="amazigh-gradient">IMAZIGHN</span>؟
-            </h2>
-            <p class="sectionHeader__subtitle">
-              متجر متخصص في كابوشات أمازيغية بطباعة عند الطلب، بتصاميم مستوحاة من الهوية الأمازيغية ورمز ⵣ.
-              هدفنا: منتج نظيف، شكل فخم، وإحساس ثقافي واضح.
-            </p>
-          </header>
-
-          <div class="about__points">
-            <div class="point">
-              <div class="point__icon" aria-hidden="true">✦</div>
-              <div class="point__body">
-                <h3 class="point__title">تصميم واضح + ألوان أمازيغية</h3>
-                <p class="point__text">
-                  نفس الشعار متوفر بثلاث نسخ: ألوان أمازيغية (متعددة) / أبيض / أسود، باش يناسب كل ستايل.
-                </p>
-              </div>
-            </div>
-
-            <div class="point">
-              <div class="point__icon" aria-hidden="true">✦</div>
-              <div class="point__body">
-                <h3 class="point__title">مدن متعددة</h3>
-                <p class="point__text">
-                  تقدر تختار المدينة اللي باغي: قلعة مݣونة، تنغير، زاكورة، أكادير…  
-                  وكاين حتى شعار بدون مدينة (نسخة عامة).
-                </p>
-              </div>
-            </div>
-
-            <div class="point">
-              <div class="point__icon" aria-hidden="true">✦</div>
-              <div class="point__body">
-                <h3 class="point__title">توصيل مجاني داخل المغرب</h3>
-                <p class="point__text">
-                  التوصيل مجاني لجميع المدن المغربية.  
-                  الطلب كيتأكد عبر واتساب لضمان المقاس واللون والشعار قبل الشحن.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="about__cta">
-            <button class="btn btn--primary" type="button" id="aboutOrderBtn">ابدأ الطلب</button>
-            <button class="btn btn--ghost" type="button" id="openPoliciesBtn">سياسة الطلب</button>
-          </div>
-        </div>
-
-        <div class="about__visual" aria-hidden="true">
-          <div class="aboutCard">
-            <div class="aboutCard__title">Amazigh Identity</div>
-            <div class="aboutCard__symbol">ⵣ</div>
-            <div class="aboutCard__lines">
-              <span class="line line--blue"></span>
-              <span class="line line--green"></span>
-              <span class="line line--yellow"></span>
-              <span class="line line--red"></span>
-            </div>
-            <div class="aboutCard__small">Premium Print • Morocco</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====== Shipping Section ====== -->
-    <section class="shipping" id="shipping" aria-label="الشحن والتوصيل">
-      <div class="container">
-
-        <header class="sectionHeader">
-          <h2 class="sectionHeader__title">
-            الشحن <span class="amazigh-gradient">داخل المغرب</span>
-          </h2>
-          <p class="sectionHeader__subtitle">
-            نوصل لجميع المدن المغربية. مدة الشحن غالباً من 1 إلى 3 أيام (حسب المدينة والضغط).  
-            التوصيل مجاني — وتأكيد الطلب كيتدار عبر واتساب.
-          </p>
-        </header>
-
-        <div class="timeline" role="list" aria-label="خطوات الطلب">
-          <div class="step" role="listitem">
-            <div class="step__num">1</div>
-            <div class="step__body">
-              <h3 class="step__title">اختَر المنتج</h3>
-              <p class="step__text">دخل للمنتج واختَر المدينة + نوع الشعار + لون الكابوش + المقاس.</p>
-            </div>
-          </div>
-
-          <div class="step" role="listitem">
-            <div class="step__num">2</div>
-            <div class="step__body">
-              <h3 class="step__title">اضغط “شراء”</h3>
-              <p class="step__text">غادي يتحل واتساب برسالة فيها جميع الاختيارات ديالك جاهزة للإرسال.</p>
-            </div>
-          </div>
-
-          <div class="step" role="listitem">
-            <div class="step__num">3</div>
-            <div class="step__body">
-              <h3 class="step__title">تأكيد التفاصيل</h3>
-              <p class="step__text">كنأكدو العنوان والقياس واللون، ومن بعد كنطلقو الشحن.</p>
-            </div>
-          </div>
-
-          <div class="step" role="listitem">
-            <div class="step__num">4</div>
-            <div class="step__body">
-              <h3 class="step__title">التوصيل</h3>
-              <p class="step__text">التوصيل مجاني لجميع المدن المغربية. (السعر النهائي كيتأكد معك في واتساب)</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="shipping__banner" role="note">
-          <strong>ملاحظة:</strong> الأسعار في الموقع مجرد “اقتراح” ويمكن تعديلها لاحقاً من JavaScript.
-          الأهم هو تجربة طلب بسيطة واحترافية عبر واتساب.
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====== FAQ Section ====== -->
-    <section class="faq" id="faq" aria-label="الأسئلة الشائعة">
-      <div class="container">
-
-        <header class="sectionHeader">
-          <h2 class="sectionHeader__title">
-            أسئلة <span class="amazigh-gradient">شائعة</span>
-          </h2>
-          <p class="sectionHeader__subtitle">
-            هنا كنوضح كلشي باش الزبون يحس بالثقة: الجودة، المقاسات، الشحن، طريقة الطلب، وسياسة التبديل/التأكيد.
-          </p>
-        </header>
-
-        <div class="accordion" role="list">
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              كيفاش كنطلب؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                كتدخل لأي منتج، كتختار المدينة ونوع الشعار ولون الكابوش والمقاس.
-                من بعد كتضغط “شراء”، كيتحل واتساب برسالة جاهزة فيها كل التفاصيل.
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              شحال مدة التوصيل؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                غالباً من 1 إلى 3 أيام داخل المغرب (قد تزيد حسب المدينة أو الضغط).
-                كنأكدّو معك التفاصيل عبر واتساب قبل الإرسال.
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              واش التوصيل مجاني؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                نعم، التوصيل مجاني لجميع المدن المغربية (كتقنية تسويقية: الثمن النهائي كيكون شامل كلشي).
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              شنو الألوان المتوفرة؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                لون الكابوش: أسود أو أبيض.  
-                الشعار: ألوان أمازيغية / أبيض / أسود (حسب التصميم).
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              واش كاين شعار بلا مدينة؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                نعم، كاين تصميم عام (IMAZIGHN بدون مدينة). غادي يكون منتج مستقل داخل المتجر.
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              كيف نختار المقاس؟
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__content">
-              <p>
-                منين تضغط “دليل المقاسات” فوق، غادي يبان لك جدول (غادي نخدموه في CSS/JS).
-                وإذا كنت محتار، راسلنا ف واتساب ونرشدوك حسب الطول/الوزن.
-              </p>
-            </div>
-          </details>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====== Contact Section ====== -->
-    <section class="contact" id="contact" aria-label="التواصل والدعم">
-      <div class="container contact__inner">
-
-        <div class="contact__content">
-          <header class="sectionHeader sectionHeader--left">
-            <h2 class="sectionHeader__title">
-              تواصل <span class="amazigh-gradient">معنا</span>
-            </h2>
-            <p class="sectionHeader__subtitle">
-              عندك سؤال؟ باغي طلب خاص؟ بغيت مدينة جديدة؟  
-              تواصل معنا عبر واتساب — ونكملو الطلب بسرعة وباحترافية.
-            </p>
-          </header>
-
-          <div class="contactCards">
-            <div class="contactCard">
-              <div class="contactCard__icon" aria-hidden="true">💬</div>
-              <div class="contactCard__body">
-                <h3 class="contactCard__title">واتساب</h3>
-                <p class="contactCard__text">
-                  اضغط الزر وسيتم فتح واتساب برسالة جاهزة.
-                </p>
-                <button class="btn btn--primary" type="button" id="contactWhatsAppBtn">
-                  تواصل عبر واتساب
-                </button>
-                <p class="contactCard__small">
-                  الرقم سيتم التحكم به من JavaScript
-                  (<span dir="ltr" id="whatsAppNumberPreview">—</span>)
-                </p>
-              </div>
-            </div>
-
-            <div class="contactCard">
-              <div class="contactCard__icon" aria-hidden="true">🚚</div>
-              <div class="contactCard__body">
-                <h3 class="contactCard__title">الشحن</h3>
-                <p class="contactCard__text">
-                  شحن لجميع المدن المغربية • توصيل مجاني • 1–3 أيام غالباً.
-                </p>
-                <a class="btn btn--ghost" href="#shipping">معلومات الشحن</a>
-              </div>
-            </div>
-
-            <div class="contactCard">
-              <div class="contactCard__icon" aria-hidden="true">🛡️</div>
-              <div class="contactCard__body">
-                <h3 class="contactCard__title">ثقة وشفافية</h3>
-                <p class="contactCard__text">
-                  الطلب كيتأكد عبر واتساب قبل الطباعة/الشحن لضمان المقاس واللون والشعار.
-                </p>
-                <button class="btn btn--ghost" type="button" id="openTrustInfoBtn">اعرف أكثر</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact__miniForm" aria-label="طلب سريع">
-            <h3 class="miniForm__title">طلب سريع (بدون اختيار منتج)</h3>
-            <p class="miniForm__text">
-              إذا بغيتي غير تبعث رسالة عامة وتبدا التواصل، عمر هاد الخانات واضغط “إرسال”.
-            </p>
-
-            <div class="miniForm__grid">
-              <div class="field">
-                <label class="field__label" for="quickName">الاسم</label>
-                <input class="field__control" id="quickName" type="text" placeholder="مثال: أحمد" />
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="quickCity">المدينة</label>
-                <input class="field__control" id="quickCity" type="text" placeholder="مثال: Marrakech" />
-              </div>
-
-              <div class="field field--full">
-                <label class="field__label" for="quickMsg">ماذا تريد؟</label>
-                <textarea class="field__control" id="quickMsg" rows="4" placeholder="مثال: بغيت كابوش IMAZIGHN مدينة تنغير…"></textarea>
-              </div>
-            </div>
-
-            <button class="btn btn--primary" type="button" id="sendQuickMessageBtn">
-              إرسال إلى واتساب
-            </button>
-          </div>
-
-        </div>
-
-        <aside class="contact__aside" aria-label="معلومات المتجر">
-          <div class="infoPanel">
-            <div class="infoPanel__top">
-              <div class="infoPanel__logo" aria-hidden="true">ⵣ</div>
-              <div>
-                <div class="infoPanel__name">IMAZIGHN HOODIES</div>
-                <div class="infoPanel__meta">Made in Morocco • Print on Demand</div>
-              </div>
-            </div>
-
-            <div class="infoPanel__list">
-              <div class="infoRow">
-                <span class="infoRow__label">التوصيل</span>
-                <span class="infoRow__value">مجاني داخل المغرب</span>
-              </div>
-              <div class="infoRow">
-                <span class="infoRow__label">المدة</span>
-                <span class="infoRow__value">1–3 أيام غالباً</span>
-              </div>
-              <div class="infoRow">
-                <span class="infoRow__label">الألوان</span>
-                <span class="infoRow__value">كابوش: أسود/أبيض</span>
-              </div>
-              <div class="infoRow">
-                <span class="infoRow__label">المقاسات</span>
-                <span class="infoRow__value">XS–XXL (قابلة للتعديل)</span>
-              </div>
-              <div class="infoRow">
-                <span class="infoRow__label">الطلب</span>
-                <span class="infoRow__value">عبر واتساب برسالة جاهزة</span>
-              </div>
-            </div>
-
-            <div class="infoPanel__actions">
-              <a class="btn btn--ghost" href="#faq">اقرأ الأسئلة</a>
-              <button class="btn btn--primary" type="button" id="asideWhatsAppBtn">اطلب الآن</button>
-            </div>
-
-            <p class="infoPanel__small">
-              * سيتم وضع رقم الواتساب + النص الافتراضي للرسائل داخل JavaScript.
-            </p>
-          </div>
-        </aside>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ====== Footer ====== -->
-  <footer class="footer" aria-label="تذييل الصفحة">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <div class="footer__brand">
-          <span class="footer__mark" aria-hidden="true">ⵣ</span>
-          <span class="footer__name">IMAZIGHN</span>
-        </div>
-        <p class="footer__text">
-          متجر كابوش أمازيغي بطباعة عند الطلب داخل المغرب.  
-          جميع الطلبات تتم عبر واتساب لتأكيد المقاس واللون والتفاصيل قبل الشحن.
-        </p>
-      </div>
-
-      <div class="footer__links" aria-label="روابط سريعة">
-        <a href="#shop">المنتجات</a>
-        <a href="#about">عن المتجر</a>
-        <a href="#shipping">الشحن</a>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container header__inner">
+
+    <a href="#home" class="brand">
+      <span class="brand__symbol">ⵣ</span>
+      <span class="brand__name">IMAZIGHN</span>
+      <span class="brand__tag">Hoodies</span>
+    </a>
+
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle"></button>
+      <div class="nav__menu" id="navMenu">
+        <a href="#home">الرئيسية</a>
+        <a href="#collections">المجموعات</a>
+        <a href="#shop">المتجر</a>
+        <a href="#about">قصتنا</a>
+        <a href="#reviews">آراء الزبناء</a>
         <a href="#faq">الأسئلة</a>
-        <a href="#contact">التواصل</a>
+        <a href="#contact" class="nav__cta">اطلب الآن</a>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero__grid">
+
+    <div class="hero__content">
+      <p class="hero__badge">هوية • ثقافة • أناقة</p>
+
+      <h1 class="hero__title">
+        كابوشات أمازيغية<br>
+        <span class="gradient-text">مصممة بهوية حرة</span>
+      </h1>
+
+      <p class="hero__text">
+        اختر مدينتك، اختر الشعار، واختر المقاس.<br>
+        نحن نهتم بالباقي.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#shop" class="btn btn--primary">تسوق الآن</a>
+        <a href="#collections" class="btn btn--ghost">استكشف المجموعات</a>
       </div>
 
-      <div class="footer__right">
-        <button class="btn btn--ghost btn--small" type="button" id="backToTopBtn">⬆︎ أعلى</button>
-        <p class="footer__copy">
-          © <span id="yearNow">2026</span> IMAZIGHN • All rights reserved
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ====== Product Modal (تفاصيل المنتج) ====== -->
-  <dialog class="modal" id="productModal" aria-label="تفاصيل المنتج">
-    <div class="modal__header">
-      <div class="modal__titleWrap">
-        <h3 class="modal__title" id="modalTitle">—</h3>
-        <p class="modal__subtitle" id="modalSubtitle">—</p>
-      </div>
-
-      <button class="modal__close" type="button" id="closeProductModalBtn" aria-label="إغلاق">
-        ✕
-      </button>
-    </div>
-
-    <div class="modal__body">
-      <div class="modal__gallery" aria-label="صور المنتج">
-        <!-- الصور ستأتي من JS: صورة رئيسية + 3 صور -->
-        <div class="gallery__main" id="modalMainImage">
-          <!-- JS inject -->
-        </div>
-
-        <div class="gallery__thumbs" id="modalThumbs">
-          <!-- JS inject thumbs -->
-        </div>
-      </div>
-
-      <div class="modal__details" aria-label="اختيارات المنتج">
-        <div class="priceBox">
-          <div class="priceBox__label">السعر المقترح</div>
-          <div class="priceBox__value">
-            <span id="modalPrice">—</span>
-            <span class="priceBox__currency">MAD</span>
-          </div>
-          <p class="priceBox__note">
-            * السعر قابل للتعديل. التوصيل مجاني داخل المغرب.
-          </p>
-        </div>
-
-        <div class="picker">
-          <div class="field">
-            <label class="field__label" for="pickCity">المدينة</label>
-            <select class="field__control" id="pickCity" name="pickCity">
-              <!-- JS populate -->
-            </select>
-          </div>
-
-          <div class="field">
-            <label class="field__label" for="pickLogoVariant">نوع الشعار</label>
-            <select class="field__control" id="pickLogoVariant" name="pickLogoVariant">
-              <option value="amazigh_colors">ألوان أمازيغية</option>
-              <option value="white">أبيض</option>
-              <option value="black">أسود</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label class="field__label" for="pickHoodieColor">لون الكابوش</label>
-            <select class="field__control" id="pickHoodieColor" name="pickHoodieColor">
-              <option value="hoodie_black">أسود</option>
-              <option value="hoodie_white">أبيض</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label class="field__label" for="pickSize">المقاس</label>
-            <select class="field__control" id="pickSize" name="pickSize">
-              <!-- JS populate sizes -->
-            </select>
-          </div>
-
-          <div class="field field--full">
-            <label class="field__label" for="pickNote">ملاحظة (اختياري)</label>
-            <textarea class="field__control" id="pickNote" rows="3" placeholder="مثال: بغيت الطباعة كبيرة شوية / أو عندي سؤال على المقاس…"></textarea>
-          </div>
-        </div>
-
-        <div class="modal__actions">
-          <button class="btn btn--primary" type="button" id="buyViaWhatsAppBtn">
-            شراء عبر واتساب
-          </button>
-          <button class="btn btn--ghost" type="button" id="saveForLaterBtn">
-            حفظ للاطلاع
-          </button>
-        </div>
-
-        <div class="modal__info">
-          <div class="miniInfo">
-            <span class="miniInfo__icon" aria-hidden="true">✓</span>
-            <span class="miniInfo__text">توصيل مجاني داخل المغرب</span>
-          </div>
-          <div class="miniInfo">
-            <span class="miniInfo__icon" aria-hidden="true">✓</span>
-            <span class="miniInfo__text">تأكيد الطلب عبر واتساب</span>
-          </div>
-          <div class="miniInfo">
-            <span class="miniInfo__icon" aria-hidden="true">✓</span>
-            <span class="miniInfo__text">ألوان الكابوش: أبيض/أسود</span>
-          </div>
-        </div>
-
+      <div class="hero__trust">
+        <span>✓ جودة ممتازة</span>
+        <span>✓ توصيل مجاني</span>
+        <span>✓ تأكيد عبر واتساب</span>
       </div>
     </div>
-  </dialog>
 
-  <!-- ====== Size Guide Modal ====== -->
-  <dialog class="modal modal--small" id="sizeGuideModal" aria-label="دليل المقاسات">
-    <div class="modal__header">
-      <div class="modal__titleWrap">
-        <h3 class="modal__title">دليل المقاسات</h3>
-        <p class="modal__subtitle">اختر المقاس المناسب — (سيتم تحسينه في CSS/JS)</p>
-      </div>
-      <button class="modal__close" type="button" id="closeSizeGuideBtn" aria-label="إغلاق">✕</button>
-    </div>
-
-    <div class="modal__body">
-      <div class="sizeGuide">
-        <p class="sizeGuide__note">
-          هذا جدول افتراضي ويمكن تغييره لاحقاً حسب المورد ديالك.
-        </p>
-
-        <div class="tableWrap" role="region" aria-label="جدول المقاسات" tabindex="0">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>المقاس</th>
-                <th>الصدر (cm)</th>
-                <th>الطول (cm)</th>
-                <th>ملاحظة</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>XS</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-              <tr><td>S</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-              <tr><td>M</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-              <tr><td>L</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-              <tr><td>XL</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-              <tr><td>XXL</td><td>—</td><td>—</td><td>قابل للتعديل</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="sizeGuide__help">
-          إذا محتار، راسلنا في واتساب وقل: الطول/الوزن، ونرشحو لك المقاس.
-        </p>
+    <div class="hero__visual">
+      <div class="hero__product">
+        <img src="images/hero-hoodie.jpg" alt="IMAZIGHN Hoodie">
+        <div class="hero__price">— MAD</div>
       </div>
     </div>
-  </dialog>
 
-  <!-- ====== Policies / Trust Modal ====== -->
-  <dialog class="modal modal--small" id="policiesModal" aria-label="سياسة الطلب">
-    <div class="modal__header">
-      <div class="modal__titleWrap">
-        <h3 class="modal__title">معلومات الثقة وسياسة الطلب</h3>
-        <p class="modal__subtitle">باش الزبون يحس بالأمان — شرح واضح</p>
+  </div>
+</section>
+
+<!-- ================= COLLECTIONS ================= -->
+<section class="collections" id="collections">
+  <div class="container">
+
+    <header class="section-header">
+      <h2>مجموعات <span class="gradient-text">IMAZIGHN</span></h2>
+      <p>كل مجموعة تحكي قصة مدينة أمازيغية</p>
+    </header>
+
+    <div class="collections__grid">
+      <div class="collection-card">
+        <img src="images/collection-tinghir.jpg" alt="Tinghir">
+        <h3>تنغير</h3>
+        <p>هوية الجنوب الشرقي</p>
       </div>
-      <button class="modal__close" type="button" id="closePoliciesBtn" aria-label="إغلاق">✕</button>
+
+      <div class="collection-card">
+        <img src="images/collection-zagora.jpg" alt="Zagora">
+        <h3>زاكورة</h3>
+        <p>روح الصحراء</p>
+      </div>
+
+      <div class="collection-card">
+        <img src="images/collection-agadir.jpg" alt="Agadir">
+        <h3>أكادير</h3>
+        <p>أمازيغ الساحل</p>
+      </div>
+
+      <div class="collection-card">
+        <img src="images/collection-general.jpg" alt="General">
+        <h3>IMAZIGHN</h3>
+        <p>هوية عامة بدون مدينة</p>
+      </div>
     </div>
 
-    <div class="modal__body">
-      <div class="policies">
-        <h4>كيف كنخدمو؟</h4>
-        <p>
-          نحن نطبع عند الطلب. يعني كل قطعة كتوجد خصيصاً حسب اختيار الزبون (المدينة/الشعار/المقاس/لون الكابوش).
-          لهذا كنأكدو معك التفاصيل في واتساب قبل الطباعة والشحن.
-        </p>
+  </div>
+</section>
 
-        <h4>الشحن والتوصيل</h4>
-        <p>
-          التوصيل مجاني لجميع المدن المغربية. المدة غالباً 1–3 أيام.
-        </p>
+<!-- ================= SHOP ================= -->
+<section class="shop" id="shop">
+  <div class="container">
 
-        <h4>الألوان والتصاميم</h4>
-        <p>
-          لون الكابوش متوفر: أسود/أبيض.  
-          الشعار متوفر بثلاث نسخ: ألوان أمازيغية / أبيض / أسود.
-        </p>
+    <header class="section-header">
+      <h2>المتجر</h2>
+      <p>اختر التصميم المناسب لك</p>
+    </header>
 
-        <h4>ملاحظة</h4>
-        <p>
-          الأسعار المعروضة هنا مجرد اقتراحات، ويمكن تغييرها بسهولة داخل JavaScript.
-        </p>
+    <div class="shop__filters">
+      <select>
+        <option>المدينة</option>
+      </select>
+      <select>
+        <option>نوع الشعار</option>
+      </select>
+      <select>
+        <option>لون الكابوش</option>
+      </select>
+      <select>
+        <option>المقاس</option>
+      </select>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="images/product-1.jpg" alt="">
+        <h3>IMAZIGHN – Tinghir</h3>
+        <p class="price">— MAD</p>
+        <button class="btn btn--primary">شراء</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/product-2.jpg" alt="">
+        <h3>IMAZIGHN – Zagora</h3>
+        <p class="price">— MAD</p>
+        <button class="btn btn--primary">شراء</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/product-3.jpg" alt="">
+        <h3>IMAZIGHN – Agadir</h3>
+        <p class="price">— MAD</p>
+        <button class="btn btn--primary">شراء</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/product-4.jpg" alt="">
+        <h3>IMAZIGHN – Classic</h3>
+        <p class="price">— MAD</p>
+        <button class="btn btn--primary">شراء</button>
       </div>
     </div>
-  </dialog>
 
-  <!-- ====== Toast / Notifications ====== -->
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
-    <div class="toast__inner">
-      <span class="toast__icon" aria-hidden="true">✓</span>
-      <span class="toast__text" id="toastText">—</span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="container about__grid">
+
+    <div class="about__content">
+      <h2>قصتنا</h2>
+      <p>
+        IMAZIGHN ليست مجرد ملابس، بل هوية.<br>
+        كل قطعة تُصنع بعناية لتعكس الثقافة الأمازيغية بروح عصرية.
+      </p>
+    </div>
+
+    <div class="about__visual">
+      <img src="images/about.jpg" alt="">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews" id="reviews">
+  <div class="container">
+
+    <h2>آراء الزبناء</h2>
+
+    <div class="reviews__grid">
+      <div class="review">
+        <p>جودة ممتازة والتوصيل سريع</p>
+        <span>★★★★★</span>
+      </div>
+      <div class="review">
+        <p>تصميم فخم وهوية واضحة</p>
+        <span>★★★★★</span>
+      </div>
+      <div class="review">
+        <p>أفضل متجر أمازيغي</p>
+        <span>★★★★★</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container contact__grid">
+
+    <div>
+      <h2>تواصل معنا</h2>
+      <p>الطلب يتم مباشرة عبر واتساب</p>
+      <button class="btn btn--primary">فتح واتساب</button>
+    </div>
+
+    <div class="contact__info">
+      <p>توصيل مجاني داخل المغرب</p>
+      <p>1 – 3 أيام</p>
+      <p>دعم سريع</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>IMAZIGHN™</strong>
+      <p>هوية أمازيغية عصرية</p>
+    </div>
+    <div>
+      <a href="#shop">المتجر</a>
+      <a href="#about">قصتنا</a>
+      <a href="#contact">التواصل</a>
+    </div>
+    <div>
+      © 2026 IMAZIGHN
     </div>
   </div>
+</footer>
 
-  <!-- ====== JS (سنكتب logic كامل لاحقاً في app.js) ====== -->
-  <script src="script.js" defer></script>
+<script src="app.js?v=1.0.0" defer></script>
 </body>
 </html>
