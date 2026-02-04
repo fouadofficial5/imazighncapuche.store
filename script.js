@@ -1,240 +1,253 @@
 /* =========================================================
-   IMAZIGHN HOODIES — JAVASCRIPT CORE
-   Compatible with index.html + styles.css
+   IMAZIGHN™ STORE – JavaScript Core
+   Author: You
+   File: app.js
    ========================================================= */
 
-/* =========================
-   GLOBAL CONFIG
-   ========================= */
+/* ------------------------------
+   SETTINGS (EDIT HERE ONLY)
+------------------------------- */
 
-// 📞 رقم الواتساب (بدّله متى بغيت)
+// رقم الواتساب (بدون +)
 const WHATSAPP_NUMBER = "2120642138756";
 
-// 💰 العملة
+// العملة
 const CURRENCY = "MAD";
 
-// 📏 المقاسات المتوفرة
-const AVAILABLE_SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
+// المقاسات المتوفرة
+const SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
 
-// 🎨 أنواع الشعار
-const LOGO_VARIANTS = {
-  amazigh_colors: "ألوان أمازيغية",
-  white: "شعار أبيض",
-  black: "شعار أسود"
-};
+// ألوان الكابوش
+const HOODIE_COLORS = [
+  { id: "black", label: "أسود" },
+  { id: "white", label: "أبيض" }
+];
 
-// 🎽 ألوان الكابوش
-const HOODIE_COLORS = {
-  hoodie_black: "كابوش أسود",
-  hoodie_white: "كابوش أبيض"
-};
+// أنواع الشعار
+const LOGO_VARIANTS = [
+  { id: "amazigh", label: "ألوان أمازيغية" },
+  { id: "white", label: "أبيض" },
+  { id: "black", label: "أسود" }
+];
 
-/* =========================
-   PRODUCTS DATA (✏️ عدّل هنا)
-   ========================= */
+/* ------------------------------
+   PRODUCTS DATA (EDITABLE)
+   🔴 هنا تبدل:
+   - العناوين
+   - الأثمنة
+   - المدن
+   - روابط الصور
+------------------------------- */
 
 const PRODUCTS = [
   {
-    id: "imazighn-kalaat",
-    title: "IMAZIGHN Hoodie",
-    city: "Kalaat M’Gouna",
-    basePrice: 249,
-    description: "كابوش أمازيغي بطباعة ⵣ — مدينة قلعة مݣونة.",
-    images: {
-      main: "https://via.placeholder.com/800x800?text=Kalaat+Main",
-      gallery: [
-        "https://via.placeholder.com/800x800?text=Kalaat+Image+1",
-        "https://via.placeholder.com/800x800?text=Kalaat+Image+2",
-        "https://via.placeholder.com/800x800?text=Kalaat+Image+3"
-      ]
-    }
+    id: "tinghir-amazigh",
+    city: "تنغير",
+    title: "IMAZIGHN – Tinghir",
+    price: 299,
+    logoVariant: "amazigh",
+    images: [
+      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+1",
+      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+2",
+      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+3",
+      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+4"
+    ]
   },
   {
-    id: "imazighn-tinghir",
-    title: "IMAZIGHN Hoodie",
-    city: "Tinghir",
-    basePrice: 249,
-    description: "تصميم أمازيغي أصلي مستوحى من مدينة تنغير.",
-    images: {
-      main: "https://via.placeholder.com/800x800?text=Tinghir+Main",
-      gallery: [
-        "https://via.placeholder.com/800x800?text=Tinghir+Image+1",
-        "https://via.placeholder.com/800x800?text=Tinghir+Image+2",
-        "https://via.placeholder.com/800x800?text=Tinghir+Image+3"
-      ]
-    }
+    id: "tinghir-white",
+    city: "تنغير",
+    title: "IMAZIGHN – Tinghir (White)",
+    price: 299,
+    logoVariant: "white",
+    images: [
+      "https://via.placeholder.com/600x450?text=Tinghir+White+1",
+      "https://via.placeholder.com/600x450?text=Tinghir+White+2",
+      "https://via.placeholder.com/600x450?text=Tinghir+White+3",
+      "https://via.placeholder.com/600x450?text=Tinghir+White+4"
+    ]
   },
   {
-    id: "imazighn-zagora",
-    title: "IMAZIGHN Hoodie",
-    city: "Zagora",
-    basePrice: 249,
-    description: "شعار IMAZIGHN مستوحى من زاكورة.",
-    images: {
-      main: "https://via.placeholder.com/800x800?text=Zagora+Main",
-      gallery: [
-        "https://via.placeholder.com/800x800?text=Zagora+Image+1",
-        "https://via.placeholder.com/800x800?text=Zagora+Image+2",
-        "https://via.placeholder.com/800x800?text=Zagora+Image+3"
-      ]
-    }
+    id: "zagora-amazigh",
+    city: "زاكورة",
+    title: "IMAZIGHN – Zagora",
+    price: 319,
+    logoVariant: "amazigh",
+    images: [
+      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+1",
+      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+2",
+      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+3",
+      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+4"
+    ]
   },
   {
-    id: "imazighn-agadir",
-    title: "IMAZIGHN Hoodie",
-    city: "Agadir",
-    basePrice: 249,
-    description: "كابوش أمازيغي أنيق — مدينة أكادير.",
-    images: {
-      main: "https://via.placeholder.com/800x800?text=Agadir+Main",
-      gallery: [
-        "https://via.placeholder.com/800x800?text=Agadir+Image+1",
-        "https://via.placeholder.com/800x800?text=Agadir+Image+2",
-        "https://via.placeholder.com/800x800?text=Agadir+Image+3"
-      ]
-    }
+    id: "agadir-black",
+    city: "أكادير",
+    title: "IMAZIGHN – Agadir",
+    price: 329,
+    logoVariant: "black",
+    images: [
+      "https://via.placeholder.com/600x450?text=Agadir+Black+1",
+      "https://via.placeholder.com/600x450?text=Agadir+Black+2",
+      "https://via.placeholder.com/600x450?text=Agadir+Black+3",
+      "https://via.placeholder.com/600x450?text=Agadir+Black+4"
+    ]
   },
   {
     id: "imazighn-classic",
-    title: "IMAZIGHN Hoodie",
-    city: "بدون مدينة",
-    basePrice: 239,
-    description: "نسخة عامة بدون اسم مدينة — ستايل أمازيغي خالص.",
-    images: {
-      main: "https://via.placeholder.com/800x800?text=Classic+Main",
-      gallery: [
-        "https://via.placeholder.com/800x800?text=Classic+Image+1",
-        "https://via.placeholder.com/800x800?text=Classic+Image+2",
-        "https://via.placeholder.com/800x800?text=Classic+Image+3"
-      ]
-    }
+    city: "—",
+    title: "IMAZIGHN – Classic",
+    price: 279,
+    logoVariant: "amazigh",
+    images: [
+      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+1",
+      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+2",
+      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+3",
+      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+4"
+    ]
   }
 ];
 
-/* =========================
+/* ------------------------------
    DOM ELEMENTS
-   ========================= */
+------------------------------- */
 
 const productsGrid = document.getElementById("productsGrid");
-const productModal = document.getElementById("productModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalSubtitle = document.getElementById("modalSubtitle");
-const modalPrice = document.getElementById("modalPrice");
-const modalMainImage = document.getElementById("modalMainImage");
-const modalThumbs = document.getElementById("modalThumbs");
+const filterCity = document.getElementById("filterCity");
+const filterLogo = document.getElementById("filterLogoVariant");
+const filterColor = document.getElementById("filterHoodieColor");
+const heroImage = document.getElementById("heroImage");
+const heroPrice = document.getElementById("heroPrice");
+const navToggle = document.getElementById("navToggle");
 
-const pickCity = document.getElementById("pickCity");
-const pickLogoVariant = document.getElementById("pickLogoVariant");
-const pickHoodieColor = document.getElementById("pickHoodieColor");
-const pickSize = document.getElementById("pickSize");
-const pickNote = document.getElementById("pickNote");
-
-const buyViaWhatsAppBtn = document.getElementById("buyViaWhatsAppBtn");
-
-/* =========================
+/* ------------------------------
    INIT
-   ========================= */
+------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderProducts();
-  populateSizes();
+  initNavigation();
+  initFilters();
+  renderProducts(PRODUCTS);
+  setHeroProduct(PRODUCTS[0]);
+  document.getElementById("yearNow").textContent = new Date().getFullYear();
 });
 
-/* =========================
-   RENDER PRODUCTS
-   ========================= */
+/* ------------------------------
+   NAVIGATION
+------------------------------- */
 
-function renderProducts() {
+function initNavigation() {
+  if (!navToggle) return;
+  navToggle.addEventListener("click", () => {
+    document.body.classList.toggle("nav-open");
+  });
+}
+
+/* ------------------------------
+   FILTERS
+------------------------------- */
+
+function initFilters() {
+  // Cities
+  const cities = [...new Set(PRODUCTS.map(p => p.city))];
+  cities.forEach(city => {
+    const opt = document.createElement("option");
+    opt.value = city;
+    opt.textContent = city;
+    filterCity.appendChild(opt);
+  });
+
+  filterCity.addEventListener("change", applyFilters);
+  filterLogo.addEventListener("change", applyFilters);
+  filterColor.addEventListener("change", applyFilters);
+}
+
+function applyFilters() {
+  let filtered = [...PRODUCTS];
+
+  if (filterCity.value !== "all") {
+    filtered = filtered.filter(p => p.city === filterCity.value);
+  }
+
+  if (filterLogo.value !== "all") {
+    filtered = filtered.filter(p => p.logoVariant === filterLogo.value);
+  }
+
+  // لون الكابوش (حالياً فقط اختيار – يمكن ربطه بالطباعة لاحقاً)
+  renderProducts(filtered);
+}
+
+/* ------------------------------
+   RENDER PRODUCTS
+------------------------------- */
+
+function renderProducts(list) {
   productsGrid.innerHTML = "";
 
-  PRODUCTS.forEach(product => {
+  list.forEach(product => {
     const card = document.createElement("div");
-    card.className = "productCard";
+    card.className = "product-card";
 
     card.innerHTML = `
-      <div class="productCard__image">
-        <img src="${product.images.main}" alt="${product.title} ${product.city}">
-      </div>
-      <div class="productCard__body">
-        <h3 class="productCard__title">${product.title}</h3>
-        <p class="productCard__city">${product.city}</p>
-        <p class="productCard__price">${product.basePrice} ${CURRENCY}</p>
-        <button class="btn btn--primary">عرض / شراء</button>
-      </div>
+      <img src="${product.images[0]}" alt="${product.title}">
+      <h3>${product.title}</h3>
+      <p class="price">${product.price} ${CURRENCY}</p>
+      <button class="btn btn--primary">شراء</button>
     `;
 
     card.querySelector("button").addEventListener("click", () => {
-      openProductModal(product);
+      openOrder(product);
     });
 
     productsGrid.appendChild(card);
   });
 }
 
-/* =========================
-   MODAL LOGIC
-   ========================= */
+/* ------------------------------
+   HERO PRODUCT
+------------------------------- */
 
-function openProductModal(product) {
-  modalTitle.textContent = product.title;
-  modalSubtitle.textContent = product.city;
-  modalPrice.textContent = product.basePrice;
-
-  // Main image
-  modalMainImage.innerHTML = `<img src="${product.images.main}" alt="">`;
-
-  // Thumbnails
-  modalThumbs.innerHTML = "";
-  product.images.gallery.forEach(img => {
-    const thumb = document.createElement("img");
-    thumb.src = img;
-    thumb.addEventListener("click", () => {
-      modalMainImage.innerHTML = `<img src="${img}" alt="">`;
-    });
-    modalThumbs.appendChild(thumb);
-  });
-
-  // City select
-  pickCity.innerHTML = `<option>${product.city}</option>`;
-
-  productModal.showModal();
-
-  buyViaWhatsAppBtn.onclick = () => {
-    sendWhatsAppOrder(product);
-  };
+function setHeroProduct(product) {
+  if (!heroImage || !heroPrice) return;
+  heroImage.style.backgroundImage = `url(${product.images[0]})`;
+  heroImage.style.backgroundSize = "cover";
+  heroImage.style.backgroundPosition = "center";
+  heroPrice.textContent = `${product.price} ${CURRENCY}`;
 }
 
-/* =========================
-   SIZE SELECT
-   ========================= */
+/* ------------------------------
+   ORDER / WHATSAPP
+------------------------------- */
 
-function populateSizes() {
-  AVAILABLE_SIZES.forEach(size => {
-    const opt = document.createElement("option");
-    opt.value = size;
-    opt.textContent = size;
-    pickSize.appendChild(opt);
-  });
-}
+function openOrder(product) {
+  const size = prompt(`اختر المقاس:\n${SIZES.join(" / ")}`, "M");
+  if (!size) return;
 
-/* =========================
-   WHATSAPP ORDER
-   ========================= */
+  const hoodieColor = prompt("لون الكابوش: أسود أو أبيض", "أسود");
+  if (!hoodieColor) return;
 
-function sendWhatsAppOrder(product) {
   const message = `
-طلب جديد 🛒
-------------------
-📦 المنتج: ${product.title}
-🏙️ المدينة: ${pickCity.value}
-🎨 الشعار: ${LOGO_VARIANTS[pickLogoVariant.value]}
-🎽 لون الكابوش: ${HOODIE_COLORS[pickHoodieColor.value]}
-📏 المقاس: ${pickSize.value}
-💰 السعر: ${product.basePrice} ${CURRENCY}
-📝 ملاحظة: ${pickNote.value || "لا توجد"}
-------------------
+سلام،
+بغيت نطلب كابوش:
+
+🧵 المنتج: ${product.title}
+🏙️ المدينة: ${product.city}
+🎨 نوع الشعار: ${getLogoLabel(product.logoVariant)}
+🖤 لون الكابوش: ${hoodieColor}
+📏 المقاس: ${size}
+💰 الثمن: ${product.price} ${CURRENCY}
+
+شكراً
 `.trim();
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
+}
+
+/* ------------------------------
+   HELPERS
+------------------------------- */
+
+function getLogoLabel(id) {
+  const l = LOGO_VARIANTS.find(v => v.id === id);
+  return l ? l.label : id;
 }
