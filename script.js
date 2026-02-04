@@ -99,9 +99,9 @@ const PRODUCTS = [
     price: 279,
     logoVariant: "amazigh",
     images: [
-      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+1",
-      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+2",
-      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+3",
+      "images /imazighn/imazighn_white.png",
+      "images /imazighn/imazighn_black.png",
+      "images /imazighn/imazighn_colors.png",
       "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+4"
     ]
   }
