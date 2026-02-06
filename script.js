@@ -1,254 +1,224 @@
 /* =========================================================
-   IMAZIGHN™ STORE – JavaScript Core
-   Author: You
-   File: app.js
+   IMAZIGHN™ STORE – PROFESSIONAL JAVASCRIPT
+   WhatsApp COD • Mobile First • Clean UX
    ========================================================= */
 
-/* ------------------------------
-   SETTINGS (EDIT HERE ONLY)
-------------------------------- */
+/* ================= SETTINGS ================= */
 
-// رقم الواتساب (بدون +)
-const WHATSAPP_NUMBER = "2120642138756";
+// رقم الواتساب بدون +
+const WHATSAPP_NUMBER = "212642138756";
+
+// السعر الثابت
+const PRICE = 279;
 
 // العملة
-const CURRENCY = "MAD";
+const CURRENCY = "DH";
 
-// المقاسات المتوفرة
-const SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
+/* ================= HELPERS ================= */
 
-// ألوان الكابوش
-const HOODIE_COLORS = [
-  { id: "black", label: "أسود" },
-  { id: "white", label: "أبيض" }
-];
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 
-// أنواع الشعار
-const LOGO_VARIANTS = [
-  { id: "amazigh", label: "ألوان أمازيغية" },
-  { id: "white", label: "أبيض" },
-  { id: "black", label: "أسود" }
-];
+function encode(text) {
+  return encodeURIComponent(text);
+}
 
-/* ------------------------------
-   PRODUCTS DATA (EDITABLE)
-   🔴 هنا تبدل:
-   - العناوين
-   - الأثمنة
-   - المدن
-   - روابط الصور
-------------------------------- */
+/* ================= YEAR ================= */
 
-const PRODUCTS = [
-  {
-    id: "tinghir-amazigh",
-    city: "تنغير",
-    title: "IMAZIGHN – Tinghir",
-    price: 299,
-    logoVariant: "amazigh",
-    images: [
-      "imazighn_colors_tinghir.png",
-      "imazighn_black_tinghir.png",
-      "imazighn_white_tinghir.png",
-      "https://via.placeholder.com/600x450?text=Tinghir+Amazigh+4"
-    ]
-  },
-  {
-    id: "tinghir-white",
-    city: "تنغير",
-    title: "IMAZIGHN – Tinghir (White)",
-    price: 299,
-    logoVariant: "white",
-    images: [
-      "imazighn_white_tinghir.png",
-      "imazighn_black_tinghir.png",
-      "imazighn_colors_tinghir.png",
-      "https://via.placeholder.com/600x450?text=Tinghir+White+4"
-    ]
-  },
-  {
-    id: "zagora-amazigh",
-    city: "زاكورة",
-    title: "IMAZIGHN – Zagora",
-    price: 319,
-    logoVariant: "amazigh",
-    images: [
-      "imazighn_colors_zagora.png",
-      "imazighn_black_zagora.png",
-      "imazighn_white_zagora.png",
-      "https://via.placeholder.com/600x450?text=Zagora+Amazigh+4"
-    ]
-  },
-  {
-    id: "agadir-black",
-    city: "أكادير",
-    title: "IMAZIGHN – Agadir",
-    price: 329,
-    logoVariant: "black",
-    images: [
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_black_agadir.png",
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_colors_agadir.png",
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn_agadir/imazighn_white_agadir.png",
-      "https://via.placeholder.com/600x450?text=Agadir+Black+4"
-    ]
-  },
-  {
-    id: "imazighn-classic",
-    city: "—",
-    title: "IMAZIGHN – Classic",
-    price: 279,
-    logoVariant: "amazigh",
-    images: [
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_colors.png",
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_black.png",
-      "https://fouadofficial5.github.io/imazighncapuche.store/images/imazighn/imazighn_white.png",
-      "https://via.placeholder.com/600x450?text=IMAZIGHN+Classic+4"
-    ]
-  }
-];
+const yearEl = $("#year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
+/* ================= MOBILE NAV ================= */
 
-/* ------------------------------
-   DOM ELEMENTS
-------------------------------- */
+const navToggle = $("#navToggle");
+const mobileNav = $("#mobileNav");
 
-const productsGrid = document.getElementById("productsGrid");
-const filterCity = document.getElementById("filterCity");
-const filterLogo = document.getElementById("filterLogoVariant");
-const filterColor = document.getElementById("filterHoodieColor");
-const heroImage = document.getElementById("heroImage");
-const heroPrice = document.getElementById("heroPrice");
-const navToggle = document.getElementById("navToggle");
+if (navToggle && mobileNav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!isOpen));
+    mobileNav.hidden = isOpen;
+  });
 
-/* ------------------------------
-   INIT
-------------------------------- */
+  $$("#mobileNav a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileNav.hidden = true;
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  initNavigation();
-  initFilters();
-  renderProducts(PRODUCTS);
-  setHeroProduct(PRODUCTS[0]);
-  document.getElementById("yearNow").textContent = new Date().getFullYear();
+/* ================= PRODUCT MODAL ================= */
+
+const modal = $("#productModal");
+const modalOverlay = modal?.querySelector(".modal__overlay");
+const modalCloseBtns = modal?.querySelectorAll("[data-close]");
+
+const pdpTitle = $("#pdpTitle");
+const pdpPrice = $("#pdpPrice");
+const pdpDesc = $("#pdpDesc");
+const mainImg = $("#pdpMainImg");
+const thumbFrontImg = $("#thumbFrontImg");
+const thumbBackImg = $("#thumbBackImg");
+const thumbFront = $("#thumbFront");
+const thumbBack = $("#thumbBack");
+
+let currentProduct = {};
+
+/* Open product */
+$$(".js-open-product").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".productCard");
+    if (!card) return;
+
+    currentProduct = {
+      id: card.dataset.id,
+      title: card.dataset.title,
+      price: card.dataset.price,
+      desc: card.dataset.desc,
+      frontImg: card.dataset.frontImg,
+      backImg: card.dataset.backImg
+    };
+
+    pdpTitle.textContent = currentProduct.title;
+    pdpPrice.textContent = currentProduct.price;
+    pdpDesc.textContent = currentProduct.desc;
+
+    mainImg.src = currentProduct.frontImg;
+    thumbFrontImg.src = currentProduct.frontImg;
+    thumbBackImg.src = currentProduct.backImg;
+
+    thumbFront.classList.add("is-active");
+    thumbBack.classList.remove("is-active");
+
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
 });
 
-/* ------------------------------
-   NAVIGATION
-------------------------------- */
-
-function initNavigation() {
-  if (!navToggle) return;
-  navToggle.addEventListener("click", () => {
-    document.body.classList.toggle("nav-open");
-  });
+/* Close modal */
+function closeModal() {
+  modal.hidden = true;
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
 
-/* ------------------------------
-   FILTERS
-------------------------------- */
+modalOverlay?.addEventListener("click", closeModal);
+modalCloseBtns?.forEach(btn => btn.addEventListener("click", closeModal));
 
-function initFilters() {
-  // Cities
-  const cities = [...new Set(PRODUCTS.map(p => p.city))];
-  cities.forEach(city => {
-    const opt = document.createElement("option");
-    opt.value = city;
-    opt.textContent = city;
-    filterCity.appendChild(opt);
-  });
+/* Switch images */
+thumbFront?.addEventListener("click", () => {
+  mainImg.src = currentProduct.frontImg;
+  thumbFront.classList.add("is-active");
+  thumbBack.classList.remove("is-active");
+});
 
-  filterCity.addEventListener("change", applyFilters);
-  filterLogo.addEventListener("change", applyFilters);
-  filterColor.addEventListener("change", applyFilters);
-}
+thumbBack?.addEventListener("click", () => {
+  mainImg.src = currentProduct.backImg;
+  thumbBack.classList.add("is-active");
+  thumbFront.classList.remove("is-active");
+});
 
-function applyFilters() {
-  let filtered = [...PRODUCTS];
+/* ================= FILTER PRODUCTS ================= */
 
-  if (filterCity.value !== "all") {
-    filtered = filtered.filter(p => p.city === filterCity.value);
-  }
+$$(".filterBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    $$(".filterBtn").forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
 
-  if (filterLogo.value !== "all") {
-    filtered = filtered.filter(p => p.logoVariant === filterLogo.value);
-  }
-
-  // لون الكابوش (حالياً فقط اختيار – يمكن ربطه بالطباعة لاحقاً)
-  renderProducts(filtered);
-}
-
-/* ------------------------------
-   RENDER PRODUCTS
-------------------------------- */
-
-function renderProducts(list) {
-  productsGrid.innerHTML = "";
-
-  list.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <img src="${product.images[0]}" alt="${product.title}">
-      <h3>${product.title}</h3>
-      <p class="price">${product.price} ${CURRENCY}</p>
-      <button class="btn btn--primary">شراء</button>
-    `;
-
-    card.querySelector("button").addEventListener("click", () => {
-      openOrder(product);
+    const filter = btn.dataset.filter;
+    $$(".productCard").forEach(card => {
+      if (filter === "all" || card.dataset.category === filter) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     });
+  });
+});
 
-    productsGrid.appendChild(card);
+/* ================= ORDER FORM ================= */
+
+const orderForm = $("#orderForm");
+
+orderForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const size = $("#sizeSelect").value;
+  const logoColor = $("#logoColorSelect").value;
+  const shirtColor = document.querySelector("input[name='shirtColor']:checked")?.value;
+
+  const fullName = $("#fullName").value.trim();
+  const phone = $("#phone").value.trim();
+  const city = $("#city").value.trim();
+  const postal = $("#postal").value.trim();
+  const address = $("#address").value.trim();
+  const notes = $("#notes").value.trim();
+
+  if (!size || !logoColor || !shirtColor) {
+    alert("❌ المرجو اختيار المقاس ولون القميص ولون الشعار.");
+    return;
+  }
+
+  if (!fullName || !phone || !city || !postal || !address) {
+    alert("❌ المرجو ملء جميع معلومات الشحن.");
+    return;
+  }
+
+  /* WhatsApp Message */
+  let message = `
+🛍️ *طلب جديد – IMAZIGHN™*
+
+📦 *المنتج:* ${currentProduct.title}
+📏 *المقاس:* ${size}
+👕 *لون القميص:* ${shirtColor}
+🎨 *لون الشعار:* ${logoColor}
+
+💰 *السعر:* ${PRICE} ${CURRENCY}
+🚚 *الشحن:* مجاني
+💳 *الدفع:* عند الاستلام
+
+👤 *الاسم:* ${fullName}
+📞 *الهاتف:* ${phone}
+🏙️ *المدينة:* ${city}
+📮 *الكود البريدي:* ${postal}
+📍 *العنوان:* ${address}
+📝 *ملاحظة:* ${notes || "—"}
+
+🙏 شكراً لاختياركم IMAZIGHN™
+`;
+
+  const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encode(message)}`;
+
+  window.open(whatsappURL, "_blank");
+});
+
+/* ================= SUPPORT WHATSAPP ================= */
+
+const supportBtn = $("#supportWhatsapp");
+if (supportBtn) {
+  supportBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const msg = "السلام عليكم، عندي سؤال بخصوص قمصان IMAZIGHN™.";
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encode(msg)}`, "_blank");
   });
 }
 
-/* ------------------------------
-   HERO PRODUCT
-------------------------------- */
+/* ================= BACK TO TOP ================= */
 
-function setHeroProduct(product) {
-  if (!heroImage || !heroPrice) return;
-  heroImage.style.backgroundImage = `url(${product.images[0]})`;
-  heroImage.style.backgroundSize = "cover";
-  heroImage.style.backgroundPosition = "center";
-  heroPrice.textContent = `${product.price} ${CURRENCY}`;
-}
+const toTop = $("#toTop");
 
-/* ------------------------------
-   ORDER / WHATSAPP
-------------------------------- */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    toTop.hidden = false;
+  } else {
+    toTop.hidden = true;
+  }
+});
 
-function openOrder(product) {
-  const size = prompt(`اختر المقاس:\n${SIZES.join(" / ")}`, "M");
-  if (!size) return;
-
-  const hoodieColor = prompt("لون الكابوش: أسود أو أبيض", "أسود");
-  if (!hoodieColor) return;
-
-  const message = `
-سلام،
-بغيت نطلب كابوش:
-
-🧵 المنتج: ${product.title}
-🏙️ المدينة: ${product.city}
-🎨 نوع الشعار: ${getLogoLabel(product.logoVariant)}
-🖤 لون الكابوش: ${hoodieColor}
-📏 المقاس: ${size}
-💰 الثمن: ${product.price} ${CURRENCY}
-
-شكراً
-`.trim();
-
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-}
-
-/* ------------------------------
-   HELPERS
-------------------------------- */
-
-function getLogoLabel(id) {
-  const l = LOGO_VARIANTS.find(v => v.id === id);
-  return l ? l.label : id;
-}
+toTop?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
